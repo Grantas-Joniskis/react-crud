@@ -10,6 +10,6 @@ const api = axios.create({
 });
 
 const fetchBlogs = async () => {
-  const response = await axios.get('/blogs');
+  const response = await axios.get<BlogModel>('/blogs');
   return response.data;
 };
