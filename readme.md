@@ -50,4 +50,4 @@ npm run build
 
 
 ## View Code
-You can view code in [online GitHub editor](https://github.dev/ZilvinasVidmantas/type-14/tree/main/React%20%5B73-91%5D).
+You can view code in [online GitHub editor](https://github.dev/Grantas-Joniskis/react-crud).
