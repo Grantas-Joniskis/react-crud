@@ -10,6 +10,12 @@ const api = axios.create({
 });
 
 const fetchBlogs = async () => {
-  const response = await axios.get<BlogModel>('/blogs');
+  const response = await api.get<BlogModel[]>('/blogs');
   return response.data;
 };
+
+const ApiService = {
+  fetchBlogs,
+};
+
+export default ApiService;
