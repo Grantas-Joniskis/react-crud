@@ -12,7 +12,7 @@ const Link = styled(NavLink)(({ theme }) => ({
       inset 4px 0 0 ${theme.palette.primary.main}, 
       inset -4px 0 0 ${theme.palette.primary.main}`,
     color: theme.palette.primary.main,
-    fontWeight: 500,
+    fontWeight: '500',
   },
 }));
 

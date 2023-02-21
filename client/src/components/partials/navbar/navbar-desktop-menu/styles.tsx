@@ -7,6 +7,7 @@ export const navbarDesktopItemStyles = (theme: Theme) => ({
   alignItems: 'center',
   color: theme.palette.grey[200],
   cursor: 'pointer',
+  fontWeight: 'bold',
   '&:hover': {
     backgroundColor: '#FB5A4B',
     color: theme.palette.common.white,
