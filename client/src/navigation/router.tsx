@@ -1,7 +1,8 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import NavbarLayout from 'components/layouts/navbar-layout';
-import HomePage from 'pages';
+import HomePage from 'pages/home-page';
+import SingleBlogPage from 'pages/single-blog-page';
 import routes from './routes';
 
 const router = createBrowserRouter([
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: routes.HomePage,
         element: <HomePage />,
+      },
+      {
+        path: routes.SingleBlogPage.path,
+        element: <SingleBlogPage />,
       },
     ],
   },
