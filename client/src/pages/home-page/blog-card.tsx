@@ -27,7 +27,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         },
       }}
     >
-      <CardMedia image={image} title="blog image" sx={{ height: 180 }} />
+      <CardMedia image={image} sx={{ height: 180 }} />
       <CardContent>
         <Typography variant="h5" textAlign="center" gutterBottom textTransform="capitalize">{title}</Typography>
         <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>

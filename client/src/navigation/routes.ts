@@ -2,6 +2,7 @@ const singleBlogPageRoot = '/blog/';
 
 const routes = {
   HomePage: '/',
+  BlogFormPage: '/create-blog',
   SingleBlogPage: {
     path: `${singleBlogPageRoot}:id`,
     createLink: (id: string | number) => `${singleBlogPageRoot}${id}`,
