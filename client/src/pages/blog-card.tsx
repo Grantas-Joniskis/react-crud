@@ -1,6 +1,8 @@
 import React from 'react';
-import { Stack, Typography } from '@mui/material';
-import Img from 'components/ui/img';
+import {
+  Box,
+  Card, CardContent, CardMedia, Typography,
+} from '@mui/material';
 
 type BlogCardProps = BlogModel;
 
@@ -10,12 +12,20 @@ const BlogCard: React.FC<BlogCardProps> = ({
   date,
   image,
 }) => (
-  <Stack>
-    <Img src={image} alt="" />
-    <Typography variant="h3">{title}</Typography>
-    <Typography variant="subtitle2">{author}</Typography>
-    <Typography variant="subtitle2">{date}</Typography>
-  </Stack>
+  <Card sx={{}}>
+    <CardMedia image={image} title="blog image" sx={{ height: 180 }} />
+    <CardContent>
+      <Typography variant="h5" textAlign="center" gutterBottom textTransform="capitalize">{title}</Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Typography variant="body2" color="text.secondary" fontFamily="cursive" fontSize="14px">
+          by
+          {' '}
+          {author}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" fontFamily="cursive" fontSize="14px">{date}</Typography>
+      </Box>
+    </CardContent>
+  </Card>
 );
 
 export default BlogCard;

@@ -11,8 +11,8 @@ const Link = styled(NavLink)<{ indent: number }>(({ theme, indent }) => ({
   color: theme.palette.common.black,
   padding: theme.spacing(1, 2, 1, indent),
   '&.active': {
-    color: theme.palette.primary.main,
-    boxShadow: `inset 6px 0 0 ${theme.palette.primary.main}`,
+    color: '#FF1700',
+    boxShadow: 'inset 6px 0 0 #FF1700',
   },
 }));
 

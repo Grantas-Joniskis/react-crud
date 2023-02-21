@@ -8,7 +8,7 @@ export const navbarDesktopItemStyles = (theme: Theme) => ({
   color: theme.palette.grey[200],
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: '#FB5A4B',
     color: theme.palette.common.white,
   },
   '&.active': {
