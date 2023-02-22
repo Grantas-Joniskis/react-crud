@@ -10,33 +10,7 @@ import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import * as Styled from './styled';
 import AuthorDateFields from './author-date-fields';
 import ImagesField from './images-field';
-
-const isStringArray = (arr: Array<unknown | string>):arr is string[] => arr.every((str) => typeof str !== 'string');
-
-const getBlogFormData = (form: HTMLFormElement | undefined): Omit<BlogModel, 'id'> => {
-  const formData = new FormData(form);
-
-  const title = formData.get('title');
-  if (typeof title !== 'string') throw new Error('Missing Title');
-  const author = formData.get('author');
-  if (typeof author !== 'string') throw new Error('Missing Author');
-  const date = formData.get('date');
-  if (typeof date !== 'string') throw new Error('Missing Date');
-  const images = formData.getAll('images'); // .filter((img) => img !== '')
-  if (!isStringArray(images)) throw new Error('All Images Must Be Strings!');
-  const image = images[0];
-  if (typeof image !== 'string') throw new Error('All Images Must Be Strings!');
-
-  const values = {
-    title,
-    author,
-    date,
-    image,
-    images: images.filter((img) => img !== ''),
-  };
-
-  return values;
-};
+import { getBlogFormValues } from './helpers';
 
 const BlogFormPage = () => {
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
@@ -45,7 +19,7 @@ const BlogFormPage = () => {
     event.preventDefault();
 
     try {
-      const values = getBlogFormData(formRef.current);
+      const values = getBlogFormValues(formRef.current);
       console.log('Creating...');
       console.log(values);
     } catch (error) {
