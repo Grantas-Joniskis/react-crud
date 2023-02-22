@@ -4,4 +4,5 @@ type BlogModel = {
   author: string,
   date: string,
   image: string,
+  images: string[]
 };
