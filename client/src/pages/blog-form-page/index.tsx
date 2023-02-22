@@ -22,7 +22,7 @@ const BlogFormPage = () => (
     >
       <Paper
         component="form"
-        elavation={6}
+        elevation={6}
         sx={{ p: 3, width: (theme) => ({ xs: 1, sm: theme.breakpoints.values.sm }) }}
       >
         <Stack sx={{ gap: 2, alignItems: 'center' }}>

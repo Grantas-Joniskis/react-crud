@@ -60,8 +60,6 @@ const SingleBlogPage = () => {
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             spaceBetween={50}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide changed')}
-            onSwiper={(swiper) => console.log(swiper)}
             style={{ height: '100%', color: 'grey' }}
           >
             {blog.images.map((img) => (
@@ -69,7 +67,7 @@ const SingleBlogPage = () => {
             ))}
           </Swiper>
         </Box>
-        <Typography variant="body1" textAlign="justify" paddingTop="50px"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, exercitationem nisi. Suscipit nisi, doloribus consequuntur perferendis, obcaecati debitis saepe eos non soluta eligendi possimus minima! Impedit eveniet quibusdam architecto, facere ipsum recusandae, adipisci ab vero repellat culpa ipsa? Cumque iste illo culpa, voluptatibus suscipit ipsa. Mollitia iusto consectetur inventore explicabo quibusdam quis voluptatem deserunt fugit soluta iure quod amet quia, numquam vero id totam quos dicta? Natus debitis exercitationem delectus voluptas! Nesciunt officiis temporibus perferendis deleniti eveniet ducimus, alias eius repellat ipsa, ratione quod est. Nam quaerat ducimus suscipit. Cumque nemo id qui quae libero, dolores sequi recusandae blanditiis deleniti.</Typography>
+        <Typography variant="body1" textAlign="justify" paddingTop="50px">&emsp;&emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, exercitationem nisi. Suscipit nisi, doloribus consequuntur perferendis, obcaecati debitis saepe eos non soluta eligendi possimus minima! Impedit eveniet quibusdam architecto, facere ipsum recusandae, adipisci ab vero repellat culpa ipsa? Cumque iste illo culpa, voluptatibus suscipit ipsa. Mollitia iusto consectetur inventore explicabo quibusdam quis voluptatem deserunt fugit soluta iure quod amet quia, numquam vero id totam quos dicta? Natus debitis exercitationem delectus voluptas! Nesciunt officiis temporibus perferendis deleniti eveniet ducimus, alias eius repellat ipsa, ratione quod est. Nam quaerat ducimus suscipit. Cumque nemo id qui quae libero, dolores sequi recusandae blanditiis deleniti.</Typography>
       </Container>
     </Box>
   );
