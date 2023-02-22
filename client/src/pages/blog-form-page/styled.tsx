@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Stack, styled, Paper as MuiPaper, PaperProps,
+  Stack, styled, Paper as MuiPaper,
 } from '@mui/material';
 
 export const PageLayout = styled(Stack)(({ theme }) => ({
@@ -16,9 +16,7 @@ export const PageLayout = styled(Stack)(({ theme }) => ({
   },
 }));
 
-const PaperForm = (props: Omit<PaperProps<'form'>, 'form'>) => <MuiPaper component="form" elevation={6} {...props} />;
-
-export const Paper = styled(PaperForm)(({ theme }) => ({
+export const Paper = styled(MuiPaper)(({ theme }) => ({
   padding: theme.spacing(3),
   width: '100%',
   [theme.breakpoints.up('sm')]: {
