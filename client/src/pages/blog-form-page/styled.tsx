@@ -5,13 +5,14 @@ import {
 
 export const PageLayout = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(2),
+  alignItems: 'center',
   [theme.breakpoints.up('sm')]: {
-    paddingLeft: theme.spacing(6),
-    paddingRight: theme.spacing(6),
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
   [theme.breakpoints.up('xl')]: {
-    paddingLeft: theme.spacing(10),
-    paddingRight: theme.spacing(10),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
   },
 }));
 
