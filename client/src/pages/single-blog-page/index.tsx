@@ -15,6 +15,7 @@ import './css.css';
 
 const SingleBlogPage = () => {
   const { id } = useParams();
+  console.log(id);
   const [blog, setBlog] = React.useState<undefined | BlogModel>(undefined);
 
   React.useEffect(() => {

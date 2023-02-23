@@ -22,16 +22,13 @@ const BlogFormPage = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    let values: BlogModel | undefined;
     try {
-      values = getBlogFormValues(formRef.current);
+      const values = getBlogFormValues(formRef.current);
+      await ApiService.postBlog(values);
+      navigate(routes.HomePage);
     } catch (error) {
       alert('Wrong Data Entered!');
       console.log(error);
-    }
-    if (values !== undefined) {
-      await ApiService.postBlog(values);
-      navigate(routes.HomePage);
     }
   };
 
