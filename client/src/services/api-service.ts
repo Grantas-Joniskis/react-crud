@@ -19,9 +19,27 @@ const fetchBlog = async (id: string | number) => {
   return response.data;
 };
 
+const postBlog = async (blog: BlogModel) => {
+  api.post('/blogs', {
+    id: blog.id,
+    title: blog.title,
+    author: blog.author,
+    date: blog.date,
+    image: blog.image,
+    images: blog.images,
+  })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 const ApiService = {
   fetchBlogs,
   fetchBlog,
+  postBlog,
 };
 
 export default ApiService;

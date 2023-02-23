@@ -7,6 +7,9 @@ import {
   Typography,
 } from '@mui/material';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import ApiService from 'services/api-service';
+import { useNavigate } from 'react-router-dom';
+import routes from 'navigation/routes';
 import * as Styled from './styled';
 import AuthorDateFields from './author-date-fields';
 import ImagesField from './images-field';
@@ -14,16 +17,21 @@ import { getBlogFormValues } from './helpers';
 
 const BlogFormPage = () => {
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
+    let values: BlogModel | undefined;
     try {
-      const values = getBlogFormValues(formRef.current);
-      console.log('Creating...');
-      console.log(values);
+      values = getBlogFormValues(formRef.current);
     } catch (error) {
-      alert('Wrong data');
+      alert('Wrong Data Entered!');
+      console.log(error);
+    }
+    if (values !== undefined) {
+      ApiService.postBlog(values);
+      navigate(routes.HomePage);
     }
   };
 

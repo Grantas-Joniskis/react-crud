@@ -1,8 +1,11 @@
-export const isStringArray = (arr: Array<unknown | string>):arr is string[] => arr.every((str) => typeof str !== 'string');
+import createId from 'uniqid';
 
-export const getBlogFormValues = (form: HTMLFormElement | undefined): Omit<BlogModel, 'id'> => {
+export const isStringArray = (arr: Array<unknown | string>):arr is string[] => arr.every((str) => typeof str === 'string');
+
+export const getBlogFormValues = (form: HTMLFormElement | undefined): BlogModel => {
   const formData = new FormData(form);
 
+  const id = createId();
   const title = formData.get('title');
   if (typeof title !== 'string') throw new Error('Missing Title');
   const author = formData.get('author');
@@ -15,6 +18,7 @@ export const getBlogFormValues = (form: HTMLFormElement | undefined): Omit<BlogM
   if (typeof image !== 'string') throw new Error('All Images Must Be Strings!');
 
   const values = {
+    id,
     title,
     author,
     date,

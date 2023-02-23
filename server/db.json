@@ -70,7 +70,6 @@
         "https://i0.wp.com/longreads.com/wp-content/uploads/2022/06/gettyimages-603195908-scaled.jpg?resize=1200%2C795&ssl=1",
         "https://i.pinimg.com/564x/d9/69/cc/d969ccdd67fdf24c45c681a8fd4e2343.jpg",
         "https://i.pinimg.com/564x/42/cb/e2/42cbe226c7c56a1285f7ed2c48cb23da.jpg"
-
       ]
     },
     {
@@ -143,6 +142,16 @@
         "https://i0.wp.com/longreads.com/wp-content/uploads/2022/03/cabinonthemountain-scaled.jpg?resize=1200%2C675&ssl=1",
         "https://i.pinimg.com/564x/14/73/07/147307149629ee3f324e5e7000e488f0.jpg",
         "https://i.pinimg.com/564x/16/ca/4c/16ca4c27b05e6a98a733af24c767c61e.jpg"
+      ]
+    },
+    {
+      "id": "legwg5b9",
+      "title": "My Title",
+      "author": "My Author",
+      "date": "09/12/2023",
+      "image": "https://adine.ca/wp-content/uploads/2023/02/Maus-and-May08020-1080x675.jpg",
+      "images": [
+        "https://adine.ca/wp-content/uploads/2023/02/Maus-and-May08020-1080x675.jpg"
       ]
     }
   ]
