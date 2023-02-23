@@ -1,4 +1,5 @@
 const singleBlogPageRoot = '/blog/';
+const updateBlogPageRoot = '/update-blog/';
 
 const staticRoutes = {
   HomePage: '/',
@@ -9,6 +10,10 @@ const dynamicRoutes = {
   SingleBlogPage: {
     path: `${singleBlogPageRoot}:id`,
     createLink: (id: string | number) => `${singleBlogPageRoot}${id}`,
+  },
+  UpdateBlogPage: {
+    path: `${updateBlogPageRoot}:id`,
+    createLink: (id: string | number) => `${updateBlogPageRoot}${id}`,
   },
 } as const;
 

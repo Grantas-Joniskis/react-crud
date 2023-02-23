@@ -1,6 +1,5 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import ApiService from 'services/api-service';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import routes from 'navigation/routes';
 import {
   Box, Button, Container, Typography,
@@ -14,20 +13,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './css.css';
+import useBlog from 'hooks/use-blog';
 
 const SingleBlogPage = () => {
   const { id } = useParams();
-  console.log(id);
-  const [blog, setBlog] = React.useState<undefined | BlogModel>(undefined);
-
-  React.useEffect(() => {
-    if (id !== undefined) {
-      (async () => {
-        const fetchedBlog = await ApiService.fetchBlog(id);
-        setBlog(fetchedBlog);
-      })();
-    }
-  }, []);
+  const navigate = useNavigate();
+  const blog = useBlog(id);
 
   if (id === undefined) return <Navigate to={routes.HomePage} />;
   if (blog === undefined) return null;
@@ -79,7 +70,7 @@ const SingleBlogPage = () => {
           pt: '20px',
         }}
         >
-          <Button variant="contained" color="warning" sx={{ width: '40%', p: 1 }}>EDIT BLOG</Button>
+          <Button variant="contained" color="warning" onClick={() => navigate(routes.UpdateBlogPage.createLink(id))} sx={{ width: '40%', p: 1 }}>EDIT BLOG</Button>
           <Button variant="contained" color="secondary" sx={{ width: '40%', p: 1 }}>DELETE BLOG</Button>
         </Box>
       </Container>

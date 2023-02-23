@@ -16,12 +16,16 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: routes.SingleBlogPage.path,
+        element: <SingleBlogPage />,
+      },
+      {
         path: routes.BlogFormPage,
         element: <BlogFormPage />,
       },
       {
-        path: routes.SingleBlogPage.path,
-        element: <SingleBlogPage />,
+        path: routes.UpdateBlogPage.path,
+        element: <BlogFormPage />,
       },
     ],
   },
