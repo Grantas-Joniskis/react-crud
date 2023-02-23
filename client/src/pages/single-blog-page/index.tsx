@@ -2,7 +2,9 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import ApiService from 'services/api-service';
 import routes from 'navigation/routes';
-import { Box, Container, Typography } from '@mui/material';
+import {
+  Box, Button, Container, Typography,
+} from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation, Pagination, Mousewheel, Keyboard,
@@ -69,6 +71,17 @@ const SingleBlogPage = () => {
           </Swiper>
         </Box>
         <Typography variant="body1" textAlign="justify" paddingTop="50px">&emsp;&emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, exercitationem nisi. Suscipit nisi, doloribus consequuntur perferendis, obcaecati debitis saepe eos non soluta eligendi possimus minima! Impedit eveniet quibusdam architecto, facere ipsum recusandae, adipisci ab vero repellat culpa ipsa? Cumque iste illo culpa, voluptatibus suscipit ipsa. Mollitia iusto consectetur inventore explicabo quibusdam quis voluptatem deserunt fugit soluta iure quod amet quia, numquam vero id totam quos dicta? Natus debitis exercitationem delectus voluptas! Nesciunt officiis temporibus perferendis deleniti eveniet ducimus, alias eius repellat ipsa, ratione quod est. Nam quaerat ducimus suscipit. Cumque nemo id qui quae libero, dolores sequi recusandae blanditiis deleniti.</Typography>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          height: '100%',
+          width: '100%',
+          pt: '20px',
+        }}
+        >
+          <Button variant="contained" color="warning" sx={{ width: '40%', p: 1 }}>EDIT BLOG</Button>
+          <Button variant="contained" color="secondary" sx={{ width: '40%', p: 1 }}>DELETE BLOG</Button>
+        </Box>
       </Container>
     </Box>
   );
