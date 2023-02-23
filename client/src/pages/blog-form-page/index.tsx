@@ -19,7 +19,7 @@ const BlogFormPage = () => {
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     let values: BlogModel | undefined;
@@ -30,7 +30,7 @@ const BlogFormPage = () => {
       console.log(error);
     }
     if (values !== undefined) {
-      ApiService.postBlog(values);
+      await ApiService.postBlog(values);
       navigate(routes.HomePage);
     }
   };

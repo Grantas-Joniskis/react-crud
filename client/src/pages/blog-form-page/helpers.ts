@@ -17,6 +17,11 @@ export const getBlogFormValues = (form: HTMLFormElement | undefined): BlogModel 
   const image = images[0];
   if (typeof image !== 'string') throw new Error('All Images Must Be Strings!');
 
+  if (title.length < 1) throw new Error('Wrong Data Entered!');
+  if (author.length < 1) throw new Error('Wrong Data Entered!');
+  if (date.length !== 10) throw new Error('Wrong Data Entered!');
+  if (images.length < 1) throw new Error('Wrong Data Entered!');
+
   const values = {
     id,
     title,
