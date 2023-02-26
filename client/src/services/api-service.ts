@@ -36,10 +36,15 @@ const postBlog = async (blog: BlogModel) => {
     });
 };
 
+const deleteBlog = async (id: string | number) => {
+  await api.delete(`blogs/${id}`);
+};
+
 const ApiService = {
   fetchBlogs,
   fetchBlog,
   postBlog,
+  deleteBlog,
 };
 
 export default ApiService;

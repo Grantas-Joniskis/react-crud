@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './css.css';
 import useBlog from 'hooks/use-blog';
+import ApiService from '../../services/api-service';
 
 const SingleBlogPage = () => {
   const { id } = useParams();
@@ -22,6 +23,11 @@ const SingleBlogPage = () => {
 
   if (id === undefined) return <Navigate to={routes.HomePage} />;
   if (blog === undefined) return null;
+
+  const handleDelete = async (blogId: string) => {
+    await ApiService.deleteBlog(blogId);
+    navigate(routes.HomePage);
+  };
 
   return (
     <Box sx={{
@@ -71,7 +77,7 @@ const SingleBlogPage = () => {
         }}
         >
           <Button variant="contained" color="warning" onClick={() => navigate(routes.UpdateBlogPage.createLink(id))} sx={{ width: '40%', p: 1 }}>EDIT BLOG</Button>
-          <Button variant="contained" color="secondary" sx={{ width: '40%', p: 1 }}>DELETE BLOG</Button>
+          <Button variant="contained" color="secondary" sx={{ width: '40%', p: 1 }} onClick={() => handleDelete(id)}>DELETE BLOG</Button>
         </Box>
       </Container>
     </Box>
