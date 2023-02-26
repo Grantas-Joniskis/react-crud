@@ -18,7 +18,7 @@ import useBlog from 'hooks/use-blog';
 const SingleBlogPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const blog = useBlog(id);
+  const [blog] = useBlog(id);
 
   if (id === undefined) return <Navigate to={routes.HomePage} />;
   if (blog === undefined) return null;

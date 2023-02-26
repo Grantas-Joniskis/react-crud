@@ -1,5 +1,5 @@
 import {
-  Box, IconButton, InputAdornment, TextField,
+  Box, IconButton, InputAdornment, TextField, TextFieldProps,
 } from '@mui/material';
 import React from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -8,7 +8,11 @@ import createId from 'uniqid';
 
 const initialIds = [createId()];
 
-const ImagesField = () => {
+type ImagesFieldProps = {
+  color: TextFieldProps['color']
+};
+
+const ImagesField: React.FC<ImagesFieldProps> = ({ color }) => {
   const [imgFieldsIds, setImgFieldsIds] = React.useState<string[]>(initialIds);
 
   const addImgField = () => setImgFieldsIds([...imgFieldsIds, createId()]);
@@ -28,7 +32,7 @@ const ImagesField = () => {
           fullWidth
           variant="filled"
           size="small"
-          color="error"
+          color={color}
           InputProps={imgFieldsIds.length > 1 ? {
             endAdornment: (
               <InputAdornment position="end">
